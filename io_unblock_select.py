@@ -10,6 +10,7 @@ class Fetcher:
     """
     非阻塞模式
     I/O复用
+    函数回调
     高并发
     """
     def connected(self ,key):
