@@ -7,9 +7,11 @@ urls=[]
 stop = False
 
 class Fetcher:
-    def __init__(self):
-        self.data = bytes()
-
+    """
+    非阻塞模式
+    I/O复用
+    高并发
+    """
     def connected(self ,key):
         selector.unregister(key.fd)
         self.client.send \
@@ -36,6 +38,7 @@ class Fetcher:
         url = urlparse(url)
         self.host = url.netloc
         self.path = url.path
+        self.data = bytes()
         if self.path == '':
             self.path = '/'
 
